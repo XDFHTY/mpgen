@@ -52,7 +52,7 @@ public class JasyptUtil {
     public static void main(String[] args){
 
         //加密
-//        System.out.println(encyptPwd("config","admin"));
+        System.out.println(encyptPwd("root","admin"));
 //        System.out.println(encyptPwd("root","47.94.45.159"));
 //        System.out.println(encyptPwd("root","Ranx1985"));
 //        System.out.println(encyptPwd("root","59.110.164.54"));
@@ -66,7 +66,7 @@ public class JasyptUtil {
 //        System.out.println(encyptPwd("PBEWithMD5AndDES","139.224.195.76"));
         //解密
 //        System.out.println(decyptPwd("root","6JD/IL8IQ8DCCZWIjdcJ0yxWCNYVQhii"));
-        System.out.println(decyptPwd("PBEWithMD5AndDES","GtEHnggEP84drOT5aA75pZoVNhYgOMdU"));
+//        System.out.println(decyptPwd("PBEWithMD5AndDES","GtEHnggEP84drOT5aA75pZoVNhYgOMdU"));
 //        System.out.println(decyptPwd("zkhyhygl","E+AkkCtpQ7kfA7i5/aeHWw=="));
     }
 }

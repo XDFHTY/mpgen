@@ -31,24 +31,28 @@ public class CodeGenerator {
         String jdbcPassword = "rootpass";
 
         // 父级包名配置
-        String parentPackage = "com.cj.suser";
+        String parentPackage = "com.cj.spension";
 
         // 生成代码的 @author 值
         String author = "zzz";
 
         // 要生成代码的表名配置
         String[] tables = {
-                "user_info",
-                "doctor_info",
-                "v2_user_friend",
+//                "user_info",
+//                "doctor_info",
+//                "v2_user_friend",
+
+//                "v3_equipment_step",
+//                "v3_equipment_ppg",
+//                "v3_equipment_ecg",
+//                "v3_equipment_bp",
+//                "v3_equipment_sao2",
+//                "v3_equipment_sleep",
+//                "v3_equipment_gps",
+
+                "v3_err_push_condition",
+                "v3_err_surface_log",
                 "v3_err_push_log",
-                "v3_equipment_step",
-                "v3_equipment_ppg",
-                "v3_equipment_ecg",
-                "v3_equipment_bp",
-                "v3_equipment_sao2",
-                "v3_equipment_sleep",
-                "v3_equipment_gps",
         };
 
         // ==================================================
@@ -65,6 +69,7 @@ public class CodeGenerator {
                 .setOpen(false)
                 // 为true时生成entity将继承Model类，单类即可完成基于单表的业务逻辑操作，按需开启
                 .setActiveRecord(true)
+                //使用Date作为时间类型
                 .setDateType(DateType.ONLY_DATE)
                 .setSwagger2(true);
 
@@ -77,17 +82,6 @@ public class CodeGenerator {
                 .setUsername(jdbcUsername)
                 .setPassword(jdbcPassword)
 //                .setTypeConvert(new MySqlTypeConvert() {
-//                    // 自定义数据库表字段类型转换【可选】
-//                    @Override
-//                    public DbColumnType processTypeConvert(GlobalConfig globalConfig, String fieldType) {
-//                        String t = fieldType.toLowerCase();
-//                        //如果是datetime类型，转换成Date字段类型
-//                        if (t.contains("datetime") || t.contains("date") || t.contains("time")) {
-//                            return DbColumnType.DATE;
-//                        }
-//                        return (DbColumnType) super.processTypeConvert(globalConfig, fieldType);
-//                    }
-//                })
 
         ;
 
@@ -97,12 +91,12 @@ public class CodeGenerator {
         // 父级包名，按需修改
         pc
                 .setParent("com.cj")
-                .setController("suser.controller")
+                .setController("spension.controller")
                 .setEntity("core.entity")
-                .setService("suser.service")
-                .setServiceImpl("suser.service.impl")
-                .setMapper("suser.mapper")
-                .setXml("suser.mapper.xml")
+                .setService("spension.service")
+                .setServiceImpl("spension.service.impl")
+                .setMapper("spension.mapper")
+                .setXml("spension.mapper.xml")
                 // 设置模块名, 会在parent包下生成一个指定的模块包
                 .setModuleName(null);
 
