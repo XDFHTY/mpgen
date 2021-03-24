@@ -6,9 +6,7 @@ import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
-import com.baomidou.mybatisplus.generator.config.rules.DbColumnType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
@@ -25,35 +23,33 @@ public class CodeGenerator {
         // ================= 需要修改的配置 =================
 
         // 数据源配置
-        String jdbcUrl = "jdbc:mysql://139.224.195.76:63306/ujiev2_1_test";
+        String jdbcUrl = "jdbc:mysql://47.103.64.182:63306/ikc";
+//        String jdbcUrl = "jdbc:mysql://139.224.195.76:63306/emp";
         String jdbcDriver = "com.mysql.jdbc.Driver";
         String jdbcUsername = "root";
         String jdbcPassword = "rootpass";
 
         // 父级包名配置
-        String parentPackage = "com.cj.spension";
+        String parentPackage = "com.emp.health";
 
         // 生成代码的 @author 值
         String author = "zzz";
 
         // 要生成代码的表名配置
         String[] tables = {
-//                "user_info",
-//                "doctor_info",
-//                "v2_user_friend",
+                "emp_health_data_equipment_original",
+                "emp_health_data_member_record",
+                "emp_health_equipment",
+                "emp_health_member",
+                "emp_health_member_info",
+                "emp_health_member_wx",
+                "emp_health_relation_tenant_member",
 
-//                "v3_equipment_step",
-//                "v3_equipment_ppg",
-//                "v3_equipment_ecg",
-//                "v3_equipment_bp",
-//                "v3_equipment_sao2",
-//                "v3_equipment_sleep",
-//                "v3_equipment_gps",
-
-                "v3_err_push_condition",
-                "v3_err_surface_log",
-                "v3_err_push_log",
         };
+
+//        String[] tables = {
+//                "wx_ecg_msg",
+//        };
 
         // ==================================================
 
@@ -90,13 +86,19 @@ public class CodeGenerator {
         PackageConfig pc = new PackageConfig();
         // 父级包名，按需修改
         pc
-                .setParent("com.cj")
-                .setController("spension.controller")
-                .setEntity("core.entity")
-                .setService("spension.service")
-                .setServiceImpl("spension.service.impl")
-                .setMapper("spension.mapper")
-                .setXml("spension.mapper.xml")
+                .setParent("com.emp")
+                .setController("health.controller")
+                .setEntity("health.entity")
+                .setService("health.service")
+                .setServiceImpl("health.service.impl")
+                .setMapper("health.mapper")
+                .setXml("health.mapper.xml")
+//                .setController("sxcx.controller")
+//                .setEntity("core.entity")
+//                .setService("sxcx.service")
+//                .setServiceImpl("sxcx.service.impl")
+//                .setMapper("sxcx.mapper")
+//                .setXml("sxcx.mapper.xml")
                 // 设置模块名, 会在parent包下生成一个指定的模块包
                 .setModuleName(null);
 
@@ -108,6 +110,7 @@ public class CodeGenerator {
                 .setColumnNaming(NamingStrategy.underline_to_camel)
                 //生成 @RestController 控制器
                 .setRestControllerStyle(true)
+                // 写于父类中的公共字段
                 .setSuperEntityColumns("id")
                 // Controller驼峰连字符，如开启，则requestMapping由 helloWorld 变为 hello-world 默认false
                 .setControllerMappingHyphenStyle(false)
