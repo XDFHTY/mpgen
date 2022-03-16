@@ -23,27 +23,32 @@ public class CodeGenerator {
         // ================= 需要修改的配置 =================
 
         // 数据源配置
-        String jdbcUrl = "jdbc:mysql://47.103.64.182:63306/ikc";
+        String jdbcUrl = "jdbc:mysql://47.103.64.182:63306/ujie_v5_dev";
 //        String jdbcUrl = "jdbc:mysql://139.224.195.76:63306/emp";
         String jdbcDriver = "com.mysql.jdbc.Driver";
         String jdbcUsername = "root";
         String jdbcPassword = "rootpass";
 
         // 父级包名配置
-        String parentPackage = "com.emp.health";
+        String parentPackage = "com.cj.shard";
 
         // 生成代码的 @author 值
         String author = "zzz";
 
         // 要生成代码的表名配置
         String[] tables = {
-                "emp_health_data_equipment_original",
-                "emp_health_data_member_record",
-                "emp_health_equipment",
-                "emp_health_member",
-                "emp_health_member_info",
-                "emp_health_member_wx",
-                "emp_health_relation_tenant_member",
+//                "v6_aio_data",
+//                "v6_aio_result",
+                "v6_aio_equ",
+//                "v5_hardware",
+//                "v5_hard_log",
+//                "emp_health_data_equipment_original",
+//                "emp_health_data_member_record",
+//                "emp_health_equipment",
+//                "emp_health_member",
+//                "emp_health_member_info",
+//                "emp_health_member_wx",
+//                "emp_health_relation_tenant_member",
 
         };
 
@@ -64,7 +69,7 @@ public class CodeGenerator {
                 // 生成完毕后是否打开输出目录
                 .setOpen(false)
                 // 为true时生成entity将继承Model类，单类即可完成基于单表的业务逻辑操作，按需开启
-                .setActiveRecord(true)
+                .setActiveRecord(false)
                 //使用Date作为时间类型
                 .setDateType(DateType.ONLY_DATE)
                 .setSwagger2(true);
@@ -86,13 +91,13 @@ public class CodeGenerator {
         PackageConfig pc = new PackageConfig();
         // 父级包名，按需修改
         pc
-                .setParent("com.emp")
-                .setController("health.controller")
-                .setEntity("health.entity")
-                .setService("health.service")
-                .setServiceImpl("health.service.impl")
-                .setMapper("health.mapper")
-                .setXml("health.mapper.xml")
+                .setParent("com.cj")
+                .setController("saio.controller")
+                .setEntity("saio.entity")
+                .setService("saio.service")
+                .setServiceImpl("saio.service.impl")
+                .setMapper("saio.mapper")
+                .setXml("saio.mapper.xml")
 //                .setController("sxcx.controller")
 //                .setEntity("core.entity")
 //                .setService("sxcx.service")
