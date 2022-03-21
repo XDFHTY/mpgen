@@ -9,6 +9,8 @@ import com.baomidou.mybatisplus.generator.config.TemplateType;
 import com.baomidou.mybatisplus.generator.config.converts.MySqlTypeConvert;
 import com.baomidou.mybatisplus.generator.config.querys.MySqlQuery;
 import com.baomidou.mybatisplus.generator.config.rules.DateType;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
+import com.baomidou.mybatisplus.generator.engine.BeetlTemplateEngine;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import com.baomidou.mybatisplus.generator.keywords.MySqlKeyWordsHandler;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
@@ -16,7 +18,9 @@ import com.baomidou.mybatisplus.generator.config.OutputFile;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 import lombok.extern.slf4j.Slf4j;
 
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 
 /**
@@ -46,13 +50,18 @@ public class CodeGenerator35 {
                 })
                 .packageConfig(builder -> {
                     builder.parent("com.cj") // 设置父包名
-                            .moduleName("sbasic") // 设置父包模块名
+                            .moduleName("server") // 设置父包模块名
                             .pathInfo(Collections.singletonMap(OutputFile.mapperXml, projectPath + "/resources/xml")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude("article","v6_aio_data") // 设置需要生成的表名
+                    builder.addInclude(getTables("auth_modular_new")) // 设置需要生成的表名
                             .addTablePrefix("t_", "c_") // 设置过滤表前缀
 
+
+                            .entityBuilder()
+                            .enableChainModel()
+                            .enableLombok()
+                            .columnNaming(NamingStrategy.underline_to_camel)
 
                             .controllerBuilder()
                             .enableRestStyle()
@@ -75,6 +84,9 @@ public class CodeGenerator35 {
 
     }
 
-
+    // 处理 all 情况
+    protected static List<String> getTables(String tables) {
+        return "all".equals(tables) ? Collections.emptyList() : Arrays.asList(tables.split(","));
+    }
 }
 

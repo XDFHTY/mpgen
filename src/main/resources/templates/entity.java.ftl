@@ -8,8 +8,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 </#if>
 <#if entityLombokModel>
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
     <#if chainModel>
 import lombok.experimental.Accessors;
     </#if>
@@ -24,8 +23,7 @@ import lombok.experimental.Accessors;
  * @since ${date}
  */
 <#if entityLombokModel>
-@Getter
-@Setter
+@Data
     <#if chainModel>
 @Accessors(chain = true)
     </#if>
