@@ -64,16 +64,20 @@ public class JasyptUtil {
 //        System.out.println(encyptPwd("config","https://github.com/xdfh/config.git"));
 //        System.out.println(encyptPwd("PBEWithMD5AndDES","123456"));
 //        System.out.println(encyptPwd("PBEWithMD5AndDES","139.224.195.76"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","47.103.64.182"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","192.168.5.133"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","root"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","rootpass"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","63306"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","16379"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","5672"));
-        System.out.println(encyptPwd("PBEWithMD5AndDES","admin"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","47.103.64.182"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","192.168.5.133"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","root"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","rootpass"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","63306"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","16379"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","5672"));
+//        System.out.println(encyptPwd("PBEWithMD5AndDES","admin"));
         //解密
-//        System.out.println(decyptPwd("root","6JD/IL8IQ8DCCZWIjdcJ0yxWCNYVQhii"));
+//        System.out.println(decyptPwd("root","rm-wz9v928k75275lu33so.mysql.rds.aliyuncs.com"));
+//        System.out.println(decyptPwd("root","3306"));
+//        System.out.println(decyptPwd("root","emp22"));
+        System.out.println(decyptPwd("root","emp22"));
+        System.out.println(decyptPwd("root","Empsun=="));
 //        System.out.println(decyptPwd("PBEWithMD5AndDES","GtEHnggEP84drOT5aA75pZoVNhYgOMdU"));
 //        System.out.println(decyptPwd("zkhyhygl","E+AkkCtpQ7kfA7i5/aeHWw=="));
     }

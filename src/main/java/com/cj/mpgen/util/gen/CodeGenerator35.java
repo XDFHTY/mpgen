@@ -50,12 +50,13 @@ public class CodeGenerator35 {
                 })
                 .packageConfig(builder -> {
                     builder.parent("com.cj") // 设置父包名
-                            .moduleName("server") // 设置父包模块名
+                            .moduleName("sshop") // 设置父包模块名
                             .pathInfo(Collections.singletonMap(OutputFile.mapperXml, projectPath + "/resources/xml")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude(getTables("auth_modular_new")) // 设置需要生成的表名
+                    builder.addInclude(getTables("v8_good")) // 设置需要生成的表名
                             .addTablePrefix("t_", "c_") // 设置过滤表前缀
+
 
 
                             .entityBuilder()
