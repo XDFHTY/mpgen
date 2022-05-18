@@ -72,12 +72,12 @@ public class JasyptUtil {
 //        System.out.println(encyptPwd("PBEWithMD5AndDES","16379"));
 //        System.out.println(encyptPwd("PBEWithMD5AndDES","5672"));
 //        System.out.println(encyptPwd("PBEWithMD5AndDES","admin"));
+        System.out.println(encyptPwd("root","emp22"));
+        System.out.println(encyptPwd("root","Empsun=="));
         //解密
 //        System.out.println(decyptPwd("root","rm-wz9v928k75275lu33so.mysql.rds.aliyuncs.com"));
 //        System.out.println(decyptPwd("root","3306"));
 //        System.out.println(decyptPwd("root","emp22"));
-        System.out.println(decyptPwd("root","emp22"));
-        System.out.println(decyptPwd("root","Empsun=="));
 //        System.out.println(decyptPwd("PBEWithMD5AndDES","GtEHnggEP84drOT5aA75pZoVNhYgOMdU"));
 //        System.out.println(decyptPwd("zkhyhygl","E+AkkCtpQ7kfA7i5/aeHWw=="));
     }
