@@ -32,13 +32,13 @@ public class CodeGenerator35 {
     public static void main(String[] args) {
 
         String projectPath = System.getProperty("user.dir").replaceAll("\\\\","/") + "/src/main";
-        DataSourceConfig build = new DataSourceConfig.Builder("jdbc:mysql://47.103.64.182:63306/ujiev2", "root", "rootpass")
+        DataSourceConfig build = new DataSourceConfig.Builder("jdbc:mysql://47.103.64.182:63306/ujiev22", "root", "rootpass")
                 .typeConvert(new MySqlTypeConvert())
                 .keyWordsHandler(new MySqlKeyWordsHandler())
                 .build();
 
 
-        FastAutoGenerator.create("jdbc:mysql://47.103.64.182:63306/ujiev2", "root", "rootpass")
+        FastAutoGenerator.create("jdbc:mysql://47.103.64.182:63306/ujiev22", "root", "rootpass")
                 .globalConfig(builder -> {
                     builder.author("acheck") // 设置作者
                             .fileOverride() // 覆盖已生成文件
@@ -50,11 +50,11 @@ public class CodeGenerator35 {
                 })
                 .packageConfig(builder -> {
                     builder.parent("com.cj") // 设置父包名
-                            .moduleName("sshop") // 设置父包模块名
+                            .moduleName("saio") // 设置父包模块名
                             .pathInfo(Collections.singletonMap(OutputFile.mapperXml, projectPath + "/resources/xml")); // 设置mapperXml生成路径
                 })
                 .strategyConfig(builder -> {
-                    builder.addInclude(getTables("v8_good")) // 设置需要生成的表名
+                    builder.addInclude(getTables("urine_result")) // 设置需要生成的表名
                             .addTablePrefix("t_", "c_") // 设置过滤表前缀
 
 
