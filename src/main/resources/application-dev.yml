@@ -1,12 +1,12 @@
 dbip: 47.103.64.182
 dbport: 63306
-dbname: ujiev22
+dbname: ujiev2
 dbuname: root
 dbupass: rootpass
 
-
 server:
-  port: 9010
+  port: 18080
+  address: localhost
 
 
 spring:

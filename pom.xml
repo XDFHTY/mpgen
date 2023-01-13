@@ -9,10 +9,11 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cj</groupId>
-    <artifactId>mpgen</artifactId>
+    <artifactId>ujboot</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>mpgen</name>
-    <description>Demo project for Spring Boot</description>
+    <name>ujboot</name>
+    <description>父模块</description>
+    <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
